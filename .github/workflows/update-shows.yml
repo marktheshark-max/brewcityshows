@@ -1,0 +1,35 @@
+name: Update Milwaukee Shows Daily
+
+on:
+  schedule:
+    - cron: "0 11 * * *" # Runs every morning at 6:00 AM Central Time (11:00 UTC)
+  workflow_dispatch:      # Lets you run it manually anytime with one click
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install scraping libraries
+        run: pip install requests beautifulsoup4
+
+      - name: Scrape Milwaukee venue calendars
+        run: python fetch_shows.py
+
+      - name: Save updated shows.json
+        run: |
+          git config user.name "Brew City Shows Bot"
+          git config user.email "bot@brewcityshows.com"
+          git add shows.json
+          git diff --staged --quiet || git commit -m "Update Milwaukee venue show listings"
+          git push
