@@ -1,0 +1,57 @@
+[
+  {
+    "id": "mke-1",
+    "artist": "Violent Femmes",
+    "venue": "Turner Hall Ballroom",
+    "neighborhood": "Downtown",
+    "date": "2026-11-20",
+    "time": "8:00 PM",
+    "age": "All Ages",
+    "price": "$45",
+    "ticketUrl": "https://www.pabsttheatergroup.com"
+  },
+  {
+    "id": "mke-2",
+    "artist": "Local Indie Showcase",
+    "venue": "Cactus Club",
+    "neighborhood": "Bay View",
+    "date": "2026-11-20",
+    "time": "9:00 PM",
+    "age": "21+",
+    "price": "$12",
+    "ticketUrl": "https://www.cactusclubmilwaukee.com"
+  },
+  {
+    "id": "mke-3",
+    "artist": "Midwest Punk Night",
+    "venue": "X-Ray Arcade",
+    "neighborhood": "Cudahy",
+    "date": "2026-11-21",
+    "time": "7:30 PM",
+    "age": "All Ages",
+    "price": "$15",
+    "ticketUrl": "https://xrayarcade.com"
+  },
+  {
+    "id": "mke-4",
+    "artist": "Cream City Jazz Quartet",
+    "venue": "Shank Hall",
+    "neighborhood": "East Side",
+    "date": "2026-11-22",
+    "time": "8:00 PM",
+    "age": "21+",
+    "price": "$20",
+    "ticketUrl": "https://shankhall.com"
+  },
+  {
+    "id": "mke-5",
+    "artist": "Sunday Acoustic Sessions",
+    "venue": "Anodyne Coffee Roasting Co.",
+    "neighborhood": "Walker's Point",
+    "date": "2026-11-22",
+    "time": "2:00 PM",
+    "age": "All Ages",
+    "price": "Free",
+    "ticketUrl": "https://anodynecoffee.com"
+  }
+]
