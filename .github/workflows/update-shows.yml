@@ -30,7 +30,8 @@ jobs:
         run: |
           git config user.name "Brew City Shows Bot"
           git config user.email "bot@brewcityshows.com"
+          git fetch origin main
+          git reset --soft origin/main
           git add shows.json
           git diff --staged --quiet || git commit -m "Update Milwaukee venue show listings"
-          git pull --rebase origin main
-          git push origin main
+          git push origin HEAD:main
