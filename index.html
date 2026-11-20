@@ -276,4 +276,633 @@
     }
 
     .clear-link {
-      background
+      background: none;
+      border: none;
+      color: var(--teal-dark);
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: none;
+    }
+
+    .venue-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+      gap: 0.65rem;
+      margin-bottom: 2rem;
+    }
+
+    .venue-chip {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.7rem 0.85rem;
+      text-align: left;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .venue-chip:hover {
+      border-color: var(--teal-dark);
+      transform: translateY(-1px);
+    }
+
+    .venue-chip.active {
+      border-color: var(--teal-dark);
+      background: var(--teal-soft);
+    }
+
+    .venue-chip-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .venue-chip-sub {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    /* Bandsintown Event Grid */
+    .shows-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 1rem;
+    }
+
+    .shows-grid.list-mode {
+      grid-template-columns: 1fr;
+    }
+
+    .event-card {
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.95rem;
+      display: flex;
+      gap: 0.95rem;
+      align-items: flex-start;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.15s ease, transform 0.15s ease;
+    }
+
+    .event-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    .shows-grid.list-mode .event-card {
+      align-items: center;
+    }
+
+    /* Band Photo + Date Tile */
+    .event-tile {
+      position: relative;
+      width: 84px;
+      height: 84px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.1;
+      user-select: none;
+    }
+
+    .event-tile .tile-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .event-tile .tile-month {
+      font-size: 0.74rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      opacity: 0.92;
+    }
+
+    .event-tile .tile-day {
+      font-size: 1.55rem;
+      margin-top: 0.1rem;
+    }
+
+    .event-tile.has-photo .tile-month,
+    .event-tile.has-photo .tile-day {
+      display: none;
+    }
+
+    .tile-corner-date {
+      display: none;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      z-index: 2;
+      background: rgba(17, 24, 39, 0.85);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.42rem;
+      border-radius: 5px;
+      backdrop-filter: blur(2px);
+    }
+
+    .event-tile.has-photo .tile-corner-date {
+      display: block;
+    }
+
+    .event-body {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .event-datetime {
+      color: var(--teal-dark);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      margin-bottom: 0.2rem;
+    }
+
+    .event-artist {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 0.2rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .event-venue {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .event-tags {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+      margin-top: 0.45rem;
+    }
+
+    .tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-subtle);
+      padding: 0.15rem 0.5rem;
+      border-radius: 5px;
+    }
+
+    .tag.free-tag {
+      background: var(--teal-soft);
+      color: var(--teal-dark);
+    }
+
+    /* RSVP + Tickets Action Row */
+    .event-actions {
+      display: flex;
+      gap: 0.45rem;
+      margin-top: 0.75rem;
+    }
+
+    .shows-grid.list-mode .event-actions {
+      margin-top: 0;
+      flex-shrink: 0;
+    }
+
+    .btn-rsvp {
+      border: 1px solid var(--border-strong);
+      background: var(--bg-white);
+      color: var(--text-primary);
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 0.42rem 0.75rem;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-rsvp:hover {
+      border-color: var(--teal-dark);
+      color: var(--teal-dark);
+    }
+
+    .btn-rsvp.saved {
+      background: var(--teal-soft);
+      border-color: var(--teal-dark);
+      color: var(--teal-dark);
+    }
+
+    .btn-tickets {
+      background: var(--teal);
+      color: #052e2d;
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 0.44rem 0.9rem;
+      border-radius: 7px;
+      text-align: center;
+      transition: background 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-tickets:hover {
+      background: var(--teal-dark);
+      color: #ffffff;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      background: var(--bg-white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.5rem 1.25rem;
+      text-align: center;
+      color: var(--text-secondary);
+    }
+
+    footer {
+      background: var(--bg-white);
+      border-top: 1px solid var(--border);
+      padding: 2rem 1.25rem;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    footer a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      margin: 0 0.75rem;
+      font-weight: 600;
+    }
+
+    footer a:hover { color: var(--teal-dark); }
+
+    @media (max-width: 640px) {
+      .shows-grid { grid-template-columns: 1fr; }
+      .shows-grid.list-mode .event-card { flex-direction: column; align-items: stretch; }
+      .nav-search { order: 3; min-width: 100%; max-width: 100%; }
+      .nav-links { gap: 0.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky Top Navigation -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/" class="brand">
+        <span class="brand-mark">BC</span>
+        <span>Brew City Shows</span>
+      </a>
+      <div class="nav-search">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <circle cx="11" cy="11" r="8"></circle>
+          <path d="M21 21l-4.35-4.35"></path>
+        </svg>
+        <input type="search" id="searchInput" placeholder="Search artists, venues, or neighborhoods..." aria-label="Search concerts" />
+      </div>
+      <nav class="nav-links">
+        <a href="/">All Shows</a>
+        <a href="/guides.html">Venue Guide</a>
+        <a href="/about.html">About &amp; Privacy</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Bandsintown-Style City Header & Filter Controls -->
+  <section class="city-header">
+    <div class="city-header-inner">
+      <div class="breadcrumb">Live Music &rsaquo; Wisconsin &rsaquo; <span>Milwaukee</span></div>
+      <div class="title-row">
+        <h1>Concerts in Milwaukee, WI</h1>
+        <span class="show-count" id="showCount">Loading shows...</span>
+      </div>
+
+      <div class="filter-bar">
+        <div class="date-pills" role="tablist" aria-label="Filter by date">
+          <button class="pill active" data-when="all">All Dates</button>
+          <button class="pill" data-when="tonight">Tonight</button>
+          <button class="pill" data-when="tomorrow">Tomorrow</button>
+          <button class="pill" data-when="weekend">This Weekend</button>
+          <button class="pill" data-when="week">Next 7 Days</button>
+          <button class="pill" data-when="saved">My RSVPs</button>
+        </div>
+
+        <div class="secondary-filters">
+          <select id="neighborhoodFilter" class="filter-select" aria-label="Filter by neighborhood">
+            <option value="all">All Neighborhoods</option>
+            <option value="Downtown">Downtown</option>
+            <option value="East Side">East Side</option>
+            <option value="Bay View">Bay View</option>
+            <option value="Walker's Point">Walker's Point</option>
+            <option value="Riverwest">Riverwest</option>
+            <option value="Near West Side">Near West Side</option>
+            <option value="Cudahy">Cudahy</option>
+          </select>
+
+          <select id="priceFilter" class="filter-select" aria-label="Filter by price">
+            <option value="all">Any Price</option>
+            <option value="free">Free Shows Only</option>
+          </select>
+
+          <div class="view-toggle" aria-label="Layout toggle">
+            <button class="view-btn active" id="gridBtn" type="button">Grid</button>
+            <button class="view-btn" id="listBtn" type="button">List</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- Popular Milwaukee Venues Quick-Filter Strip -->
+    <div class="section-heading">
+      <h2>Popular Venues in Milwaukee</h2>
+      <button class="clear-link" id="clearVenueBtn" type="button">Clear venue filter &times;</button>
+    </div>
+    <div class="venue-strip" id="venueStrip"></div>
+
+    <!-- Upcoming Concerts Grid -->
+    <div class="section-heading">
+      <h2 id="feedHeading">Upcoming Live Music</h2>
+    </div>
+    <div class="shows-grid" id="showsGrid"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Brew City Shows &bull; Independent Milwaukee Concert Guide</p>
+    <p style="margin-top: 0.5rem;">
+      <a href="/">Concerts in Milwaukee</a>
+      <a href="/guides.html">Venue Guide</a>
+      <a href="/about.html">About</a>
+      <a href="/about.html#privacy">Privacy Policy</a>
+    </p>
+  </footer>
+
+  <script>
+    let allShows = [];
+    let selectedWhen = "all";
+    let selectedVenue = "all";
+    let savedIds = new Set(JSON.parse(localStorage.getItem("bcs_rsvps") || "[]"));
+
+    const TILE_GRADIENTS = [
+      "linear-gradient(135deg, #00a7a2, #0f172a)",
+      "linear-gradient(135deg, #0284c7, #1e293b)",
+      "linear-gradient(135deg, #0d9488, #115e59)",
+      "linear-gradient(135deg, #2563eb, #1e1b4b)",
+      "linear-gradient(135deg, #059669, #064e3b)"
+    ];
+
+    function escapeHtml(str) {
+      return String(str || "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function parseLocalDate(dateStr) {
+      const [y, m, d] = dateStr.split("-").map(Number);
+      return new Date(y, m - 1, d);
+    }
+
+    function toYMD(dt) {
+      const y = dt.getFullYear();
+      const m = String(dt.getMonth() + 1).padStart(2, "0");
+      const d = String(dt.getDate()).padStart(2, "0");
+      return `${y}-${m}-${d}`;
+    }
+
+    function formatDisplayDate(dateStr) {
+      const dt = parseLocalDate(dateStr);
+      return dt.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+    }
+
+    function injectSeoSchema(shows) {
+      const schema = shows.slice(0, 30).map(s => ({
+        "@context": "https://schema.org",
+        "@type": "MusicEvent",
+        "name": s.artist,
+        "startDate": s.date,
+        "image": s.image || undefined,
+        "location": {
+          "@type": "MusicVenue",
+          "name": s.venue,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Milwaukee",
+            "addressRegion": "WI",
+            "addressCountry": "US"
+          }
+        },
+        "url": s.ticketUrl
+      }));
+      const tag = document.createElement("script");
+      tag.type = "application/ld+json";
+      tag.textContent = JSON.stringify(schema);
+      document.head.appendChild(tag);
+    }
+
+    function buildVenueStrip(shows) {
+      const counts = {};
+      const hoods = {};
+      shows.forEach(s => {
+        counts[s.venue] = (counts[s.venue] || 0) + 1;
+        hoods[s.venue] = s.neighborhood;
+      });
+
+      const topVenues = Object.entries(counts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 6);
+
+      const strip = document.getElementById("venueStrip");
+      strip.innerHTML = topVenues.map(([venue, count]) => `
+        <button type="button" class="venue-chip ${selectedVenue === venue ? "active" : ""}" data-venue="${escapeHtml(venue)}">
+          <div class="venue-chip-name">${escapeHtml(venue)}</div>
+          <div class="venue-chip-sub">${escapeHtml(hoods[venue])} &bull; ${count} ${count === 1 ? "show" : "shows"}</div>
+        </button>
+      `).join("");
+
+      strip.querySelectorAll(".venue-chip").forEach(btn => {
+        btn.addEventListener("click", () => {
+          const v = btn.dataset.venue;
+          selectedVenue = selectedVenue === v ? "all" : v;
+          document.getElementById("clearVenueBtn").style.display = selectedVenue === "all" ? "none" : "inline";
+          buildVenueStrip(allShows);
+          renderShows();
+        });
+      });
+    }
+
+    function toggleRsvp(id) {
+      if (savedIds.has(id)) {
+        savedIds.delete(id);
+      } else {
+        savedIds.add(id);
+      }
+      localStorage.setItem("bcs_rsvps", JSON.stringify([...savedIds]));
+      renderShows();
+    }
+
+    function renderShows() {
+      const neighborhood = document.getElementById("neighborhoodFilter").value;
+      const priceMode = document.getElementById("priceFilter").value;
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const todayStr = toYMD(today);
+
+      const tomorrow = new Date(today);
+      tomorrow.setDate(today.getDate() + 1);
+      const tomorrowStr = toYMD(tomorrow);
+
+      const weekOut = new Date(today);
+      weekOut.setDate(today.getDate() + 7);
+      const weekOutStr = toYMD(weekOut);
+
+      const filtered = allShows.filter(show => {
+        if (selectedVenue !== "all" && show.venue !== selectedVenue) return false;
+        if (neighborhood !== "all" && show.neighborhood !== neighborhood) return false;
+        if (priceMode === "free" && !String(show.price).toLowerCase().includes("free")) return false;
+        if (query && !show.artist.toLowerCase().includes(query) && !show.venue.toLowerCase().includes(query) && !show.neighborhood.toLowerCase().includes(query)) {
+          return false;
+        }
+        if (selectedWhen === "tonight" && show.date !== todayStr) return false;
+        if (selectedWhen === "tomorrow" && show.date !== tomorrowStr) return false;
+        if (selectedWhen === "week" && (show.date < todayStr || show.date > weekOutStr)) return false;
+        if (selectedWhen === "weekend") {
+          const d = parseLocalDate(show.date);
+          const day = d.getDay();
+          if (show.date < todayStr || show.date > weekOutStr || (day !== 5 && day !== 6 && day !== 0)) return false;
+        }
+        if (selectedWhen === "saved" && !savedIds.has(show.id)) return false;
+        return true;
+      });
+
+      document.getElementById("showCount").textContent = `${filtered.length} ${filtered.length === 1 ? "show" : "shows"}`;
+      document.getElementById("feedHeading").textContent =
+        selectedVenue !== "all" ? `Upcoming Shows at ${selectedVenue}` :
+        selectedWhen === "saved" ? "My Saved RSVPs" : "Upcoming Live Music";
+
+      const grid = document.getElementById("showsGrid");
+      if (!filtered.length) {
+        grid.innerHTML = `
+          <div class="empty-state">
+            <p style="font-weight:700; font-size:1.05rem; margin-bottom:0.35rem;">No Milwaukee shows match those filters</p>
+            <p>Try switching back to <strong>All Dates</strong> or clearing your venue/neighborhood filter.</p>
+          </div>`;
+        return;
+      }
+
+      grid.innerHTML = filtered.map((show, idx) => {
+        const dt = parseLocalDate(show.date);
+        const monthShort = dt.toLocaleDateString("en-US", { month: "short" });
+        const dayNum = dt.getDate();
+        const bg = TILE_GRADIENTS[idx % TILE_GRADIENTS.length];
+        const isSaved = savedIds.has(show.id);
+        const isFree = String(show.price).toLowerCase().includes("free");
+        const hasPhoto = Boolean(show.image && show.image.startsWith("http"));
+
+        const photoHtml = hasPhoto
+          ? `<img class="tile-photo" src="${escapeHtml(show.image)}" alt="${escapeHtml(show.artist)}" loading="lazy" onerror="this.parentElement.classList.remove('has-photo'); this.remove();" />`
+          : "";
+
+        return `
+          <article class="event-card">
+            <div class="event-tile ${hasPhoto ? "has-photo" : ""}" style="background: ${bg};">
+              ${photoHtml}
+              <span class="tile-corner-date">${monthShort} ${dayNum}</span>
+              <span class="tile-month" aria-hidden="true">${monthShort}</span>
+              <span class="tile-day" aria-hidden="true">${dayNum}</span>
+            </div>
+            <div class="event-body">
+              <div class="event-datetime">${formatDisplayDate(show.date)} &bull; ${escapeHtml(show.time)}</div>
+              <h3 class="event-artist">${escapeHtml(show.artist)}</h3>
+              <div class="event-venue">${escapeHtml(show.venue)} &bull; ${escapeHtml(show.neighborhood)}</div>
+              <div class="event-tags">
+                <span class="tag ${isFree ? "free-tag" : ""}">${escapeHtml(show.price)}</span>
+                <span class="tag">${escapeHtml(show.age)}</span>
+              </div>
+              <div class="event-actions">
+                <button type="button" class="btn-rsvp ${isSaved ? "saved" : ""}" onclick="toggleRsvp('${escapeHtml(show.id)}')">
+                  ${isSaved ? "&#10003; Going" : "RSVP"}
+                </button>
+                <a class="btn-tickets" href="${escapeHtml(show.ticketUrl)}" target="_blank" rel="noopener noreferrer">Tickets</a>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    document.querySelectorAll(".pill").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedWhen = btn.dataset.when;
+        renderShows();
+      });
+    });
+
+    document.getElementById("neighborhoodFilter").addEventListener("change", renderShows);
+    document.getElementById("priceFilter").addEventListener("change", renderShows);
+    document.getElementById("searchInput").addEventListener("input", renderShows);
+
+    document.getElementById("clearVenueBtn").addEventListener("click", () => {
+      selectedVenue = "all";
+      document.getElementById("clearVenueBtn").style.display = "none";
+      buildVenueStrip(allShows);
+      renderShows();
+    });
+
+    document.getElementById("gridBtn").addEventListener("click", () => {
+      document.getElementById("showsGrid").classList.remove("list-mode");
+      document.getElementById("gridBtn").classList.add("active");
+      document.getElementById("listBtn").classList.remove("active");
+    });
+
+    document.getElementById("listBtn").addEventListener("click", () => {
+      document.getElementById("showsGrid").classList.add("list-mode");
+      document.getElementById("listBtn").classList.add("active");
+      document.getElementById("gridBtn").classList.remove("active");
+    });
+
+    fetch("./shows.json")
+      .then(res => res.json())
+      .then(data => {
+        allShows = data.sort((a, b) => a.date.localeCompare(b.date));
+        injectSeoSchema(allShows);
+        buildVenueStrip(allShows);
+        renderShows();
+      })
+      .catch(() => {
+        document.getElementById("showsGrid").innerHTML = `<div class="empty-state"><p>Unable to load show listings right now.</p></div>`;
+      });
+  </script>
+</body>
+</html>
