@@ -2,6 +2,7 @@ import html
 import json
 import re
 import time
+import urllib.parse
 from datetime import datetime
 from zoneinfo import ZoneInfo
 
@@ -12,6 +13,7 @@ MKE_TZ = ZoneInfo("America/Chicago")
 HEADERS = {
     "User-Agent": "BrewCityShowsBot/1.0 (+https://brewcityshows.com; local Milwaukee music calendar)"
 }
+BAND_IMAGE_CACHE = {}
 
 NEIGHBORHOOD_MAP = {
     "fiserv forum": "Downtown",
@@ -56,6 +58,73 @@ def fetch_page(url: str) -> str:
     return resp.text
 
 
+def extract_image_url(img_field) -> str:
+    if not img_field:
+        return ""
+    if isinstance(img_field, str):
+        return img_field.strip()
+    if isinstance(img_field, list) and img_field:
+        return extract_image_url(img_field[0])
+    if isinstance(img_field, dict):
+        return str(img_field.get("url") or img_field.get("contentUrl") or "").strip()
+    return ""
+
+
+def extract_band_website(ev: dict) -> str:
+    performers = ev.get("performer") or ev.get("performers") or []
+    if isinstance(performers, dict):
+        performers = [performers]
+    if not isinstance(performers, list):
+        return ""
+
+    skip_domains = (
+        "ticketmaster.com",
+        "axs.com",
+        "etix.com",
+        "eventbrite.com",
+        "seetickets.us",
+        "facebook.com",
+        "instagram.com",
+    )
+
+    for perf in performers:
+        if not isinstance(perf, dict):
+            continue
+        for key in ("url", "sameAs"):
+            candidate = perf.get(key)
+            if isinstance(candidate, list) and candidate:
+                candidate = candidate[0]
+            if isinstance(candidate, str) and candidate.startswith("http"):
+                lower = candidate.lower()
+                if not any(domain in lower for domain in skip_domains):
+                    return candidate.strip()
+    return ""
+
+
+def fetch_band_website_image(band_url: str) -> str:
+    if not band_url:
+        return ""
+    if band_url in BAND_IMAGE_CACHE:
+        return BAND_IMAGE_CACHE[band_url]
+
+    try:
+        time.sleep(1.0)
+        resp = requests.get(band_url, headers=HEADERS, timeout=10)
+        resp.raise_for_status()
+        soup = BeautifulSoup(resp.text, "html.parser")
+        for prop in ("og:image", "twitter:image"):
+            tag = soup.find("meta", attrs={"property": prop}) or soup.find("meta", attrs={"name": prop})
+            if tag and tag.get("content"):
+                img_url = urllib.parse.urljoin(band_url, tag["content"].strip())
+                BAND_IMAGE_CACHE[band_url] = img_url
+                return img_url
+    except Exception:
+        pass
+
+    BAND_IMAGE_CACHE[band_url] = ""
+    return ""
+
+
 # ---------------------------------------------------------
 # 1. X-RAY ARCADE (Squarespace JSON Feed + Offsite Shows)
 # ---------------------------------------------------------
@@ -82,6 +151,7 @@ def scrape_xray_arcade() -> list:
 
         full_url = item.get("fullUrl", "/calendar")
         ticket_url = full_url if full_url.startswith("http") else f"https://xrayarcade.com{full_url}"
+        image_url = clean_text(item.get("assetUrl", ""))
 
         shows.append({
             "id": f"xray-{item.get('id', dt.strftime('%Y%m%d'))}",
@@ -93,6 +163,7 @@ def scrape_xray_arcade() -> list:
             "age": "All Ages / Check Venue",
             "price": "See Tickets",
             "ticketUrl": ticket_url,
+            "image": image_url,
         })
     return shows
 
@@ -135,7 +206,6 @@ def scrape_jsonld_site(url: str, default_venue: str, prefix: str) -> list:
         if not artist or not start_raw:
             continue
 
-        # Parse ISO date/time (e.g. "2026-11-20T20:00:00-06:00" or "2026-11-20")
         date_str = start_raw[:10]
         time_str = "TBA"
         if "T" in start_raw:
@@ -164,6 +234,13 @@ def scrape_jsonld_site(url: str, default_venue: str, prefix: str) -> list:
 
         ticket_url = ev.get("url") or url
 
+        # 1. Try direct event/band image from the venue listing
+        image_url = extract_image_url(ev.get("image"))
+        # 2. If missing, check if a band website was identified and pull its og:image
+        if not image_url:
+            band_site = extract_band_website(ev)
+            image_url = fetch_band_website_image(band_site)
+
         shows.append({
             "id": f"{prefix}-{date_str}-{idx}",
             "artist": artist,
@@ -174,6 +251,7 @@ def scrape_jsonld_site(url: str, default_venue: str, prefix: str) -> list:
             "age": "Check Venue",
             "price": price_str,
             "ticketUrl": ticket_url,
+            "image": image_url,
         })
     return shows
 
@@ -195,7 +273,6 @@ def scrape_shank_hall() -> list:
 
     for idx, row in enumerate(soup.find_all(["tr", "div", "li"])):
         text = clean_text(row.get_text(" "))
-        # Match patterns like "Nov. 20 Fri. Lil' Ed & The Blues Imperials 8:00pm $20.00 Get Tickets"
         match = re.search(
             r"\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)\.?\s+(\d{1,2})\b.*?\b(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun)\.?\s+(.+?)\s+(\d{1,2}:\d{2}\s*[ap]m)\b",
             text,
@@ -209,7 +286,6 @@ def scrape_shank_hall() -> list:
         artist = clean_text(match.group(3))
         time_str = match.group(4).upper().replace("AM", " AM").replace("PM", " PM").replace("  ", " ")
 
-        # Handle year rollover (e.g., scraping January shows in November)
         year = now.year + 1 if mon_num < now.month else now.year
         try:
             date_str = datetime(year, mon_num, day_num).strftime("%Y-%m-%d")
@@ -222,6 +298,9 @@ def scrape_shank_hall() -> list:
         link_tag = row.find("a", href=True)
         ticket_url = link_tag["href"] if link_tag else url
 
+        img_tag = row.find("img", src=True)
+        image_url = urllib.parse.urljoin(url, img_tag["src"]) if img_tag else ""
+
         shows.append({
             "id": f"shank-{date_str}-{idx}",
             "artist": artist,
@@ -232,6 +311,7 @@ def scrape_shank_hall() -> list:
             "age": "21+",
             "price": price_str,
             "ticketUrl": ticket_url,
+            "image": image_url,
         })
     return shows
 
