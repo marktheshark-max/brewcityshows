@@ -126,19 +126,6 @@
 
     .nav-links a:hover { color: var(--teal-dark); }
 
-    .nav-cta {
-      background: var(--text-primary);
-      color: var(--bg-white) !important;
-      padding: 0.45rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.85rem !important;
-    }
-
-    .nav-cta:hover {
-      background: var(--teal-dark);
-      color: var(--bg-white) !important;
-    }
-
     /* City Hero Banner */
     .city-header {
       background: var(--bg-white);
@@ -184,7 +171,7 @@
       border-radius: 999px;
     }
 
-    /* Filter Bar (Bandsintown Pills + Dropdowns) */
+    /* Filter Bar */
     .filter-bar {
       display: flex;
       align-items: center;
@@ -360,7 +347,7 @@
     /* Bandsintown Event Grid */
     .shows-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 1rem;
     }
 
@@ -374,7 +361,7 @@
       border-radius: 12px;
       padding: 0.95rem;
       display: flex;
-      gap: 0.9rem;
+      gap: 0.95rem;
       align-items: flex-start;
       box-shadow: var(--shadow-sm);
       transition: box-shadow 0.15s ease, transform 0.15s ease;
@@ -389,12 +376,14 @@
       align-items: center;
     }
 
-    /* Square Date / Artwork Tile */
+    /* Band Photo + Date Tile */
     .event-tile {
-      width: 72px;
-      height: 72px;
+      position: relative;
+      width: 84px;
+      height: 84px;
       border-radius: 10px;
       flex-shrink: 0;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -406,16 +395,52 @@
       user-select: none;
     }
 
+    .event-tile .tile-photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
     .event-tile .tile-month {
-      font-size: 0.72rem;
+      font-size: 0.74rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      opacity: 0.9;
+      opacity: 0.92;
     }
 
     .event-tile .tile-day {
-      font-size: 1.45rem;
+      font-size: 1.55rem;
       margin-top: 0.1rem;
+    }
+
+    /* Compact corner date pill when band photo is present */
+    .event-tile.has-photo .tile-month,
+    .event-tile.has-photo .tile-day {
+      display: none;
+    }
+
+    .tile-corner-date {
+      display: none;
+      position: absolute;
+      top: 5px;
+      left: 5px;
+      z-index: 2;
+      background: rgba(17, 24, 39, 0.85);
+      color: #ffffff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 0.18rem 0.42rem;
+      border-radius: 5px;
+      backdrop-filter: blur(2px);
+    }
+
+    .event-tile.has-photo .tile-corner-date {
+      display: block;
     }
 
     .event-body {
@@ -472,7 +497,7 @@
       color: var(--teal-dark);
     }
 
-    /* RSVP + Tickets Action Row (Bandsintown Signature Pattern) */
+    /* RSVP + Tickets Action Row */
     .event-actions {
       display: flex;
       gap: 0.45rem;
@@ -579,7 +604,6 @@
       <nav class="nav-links">
         <a href="/">All Shows</a>
         <a href="/about.html">About &amp; Privacy</a>
-        <a href="mailto:hello@brewcityshows.com" class="nav-cta">+ Submit Show</a>
       </nav>
     </div>
   </header>
@@ -662,7 +686,6 @@
       <a href="/">Concerts in Milwaukee</a>
       <a href="/about.html">About</a>
       <a href="/about.html#privacy">Privacy Policy</a>
-      <a href="mailto:hello@brewcityshows.com">Contact</a>
     </p>
   </footer>
 
@@ -711,6 +734,7 @@
         "@type": "MusicEvent",
         "name": s.artist,
         "startDate": s.date,
+        "image": s.image || undefined,
         "location": {
           "@type": "MusicVenue",
           "name": s.venue,
@@ -828,12 +852,19 @@
         const bg = TILE_GRADIENTS[idx % TILE_GRADIENTS.length];
         const isSaved = savedIds.has(show.id);
         const isFree = String(show.price).toLowerCase().includes("free");
+        const hasPhoto = Boolean(show.image && show.image.startsWith("http"));
+
+        const photoHtml = hasPhoto
+          ? `<img class="tile-photo" src="${escapeHtml(show.image)}" alt="${escapeHtml(show.artist)}" loading="lazy" onerror="this.parentElement.classList.remove('has-photo'); this.remove();" />`
+          : "";
 
         return `
           <article class="event-card">
-            <div class="event-tile" style="background: ${bg};" aria-hidden="true">
-              <span class="tile-month">${monthShort}</span>
-              <span class="tile-day">${dayNum}</span>
+            <div class="event-tile ${hasPhoto ? "has-photo" : ""}" style="background: ${bg};">
+              ${photoHtml}
+              <span class="tile-corner-date">${monthShort} ${dayNum}</span>
+              <span class="tile-month" aria-hidden="true">${monthShort}</span>
+              <span class="tile-day" aria-hidden="true">${dayNum}</span>
             </div>
             <div class="event-body">
               <div class="event-datetime">${formatDisplayDate(show.date)} &bull; ${escapeHtml(show.time)}</div>
