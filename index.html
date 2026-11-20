@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brew City Shows | Live Music & Concerts in Milwaukee, WI</title>
+  <meta name="description" content="Find every live music show, club gig, and concert happening tonight and this weekend in Milwaukee, WI." />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #f59e0b;
+      --accent-dark: #d97706;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    header {
+      background: #0b1120;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 1.25rem;
+    }
+    .nav-wrap {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .brand {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 1.25rem;
+      font-size: 0.95rem;
+    }
+    nav a:hover { color: var(--text); }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 1.5rem 1.25rem 3rem;
+    }
+    .hero { margin-bottom: 1.5rem; }
+    .hero h1 { font-size: 1.85rem; margin-bottom: 0.35rem; }
+    .hero p { color: var(--muted); }
+    .ad-slot {
+      background: #131c31;
+      border: 1px dashed var(--border);
+      border-radius: 8px;
+      min-height: 90px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin: 1.25rem 0;
+      text-align: center;
+      padding: 0.5rem;
+    }
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+      background: var(--card);
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-bottom: 1.5rem;
+    }
+    @media (min-width: 700px) {
+      .controls { grid-template-columns: auto 180px 1fr; align-items: center; }
+    }
+    .pill-group { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+    .pill {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.45rem 0.85rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .pill.active {
+      background: var(--accent);
+      color: #0f172a;
+      border-color: var(--accent);
+      font-weight: 700;
+    }
+    select, input[type="search"] {
+      background: var(--bg);
+      color: var(--text);
+      border: 1px solid var(--border);
+      padding: 0.55rem 0.75rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      width: 100%;
+    }
+    .show-list { display: grid; gap: 0.85rem; }
+    .show-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem 1.15rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .show-date {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .show-artist { font-size: 1.2rem; font-weight: 700; margin: 0.15rem 0; }
+    .show-meta { color: var(--muted); font-size: 0.9rem; }
+    .badges { display: flex; gap: 0.4rem; margin-top: 0.45rem; flex-wrap: wrap; }
+    .badge {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.15rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+    .ticket-btn {
+      background: var(--accent);
+      color: #0f172a;
+      text-decoration: none;
+      font-weight: 700;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+    .ticket-btn:hover { background: var(--accent-dark); }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); margin: 0 0.6rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-wrap">
+      <a href="/" class="brand">Brew City Shows</a>
+      <nav>
+        <a href="/">All Shows</a>
+        <a href="/about.html">About &amp; Privacy</a>
+        <a href="mailto:hello@brewcityshows.com">Submit a Show</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Milwaukee Live Music Calendar</h1>
+      <p>Concerts, club gigs, and local shows across Brew City—updated daily.</p>
+    </section>
+
+    <!-- Top AdSense Banner Slot -->
+    <div class="ad-slot" aria-label="Advertisement">
+      Ad Space (728x90 / Responsive Google AdSense Banner)
+    </div>
+
+    <section class="controls" aria-label="Filter concerts">
+      <div class="pill-group">
+        <button class="pill active" data-when="all">All Dates</button>
+        <button class="pill" data-when="tonight">Tonight</button>
+        <button class="pill" data-when="weekend">This Weekend</button>
+      </div>
+      <select id="neighborhoodFilter" aria-label="Filter by neighborhood">
+        <option value="all">All Neighborhoods</option>
+        <option value="Downtown">Downtown</option>
+        <option value="Bay View">Bay View</option>
+        <option value="Walker's Point">Walker's Point</option>
+        <option value="East Side">East Side</option>
+        <option value="Cudahy">Cudahy</option>
+      </select>
+      <input type="search" id="searchInput" placeholder="Search artist or venue..." aria-label="Search artist or venue" />
+    </section>
+
+    <div id="showList" class="show-list">Loading Milwaukee shows...</div>
+
+    <!-- Bottom AdSense Banner Slot -->
+    <div class="ad-slot" aria-label="Advertisement">
+      Ad Space (Responsive Display Ad)
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Brew City Shows &bull; Milwaukee, WI</p>
+    <p style="margin-top: 0.4rem;">
+      <a href="/about.html">About</a>
+      <a href="/about.html#privacy">Privacy Policy</a>
+      <a href="mailto:hello@brewcityshows.com">Contact</a>
+    </p>
+  </footer>
+
+  <script>
+    let allShows = [];
+    let selectedWhen = "all";
+
+    function formatDate(dateStr) {
+      const [y, m, d] = dateStr.split("-").map(Number);
+      const dt = new Date(y, m - 1, d);
+      return dt.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" });
+    }
+
+    function injectSeoSchema(shows) {
+      const schema = shows.slice(0, 25).map(s => ({
+        "@context": "https://schema.org",
+        "@type": "MusicEvent",
+        "name": s.artist,
+        "startDate": s.date,
+        "location": {
+          "@type": "MusicVenue",
+          "name": s.venue,
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Milwaukee",
+            "addressRegion": "WI",
+            "addressCountry": "US"
+          }
+        },
+        "url": s.ticketUrl
+      }));
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.textContent = JSON.stringify(schema);
+      document.head.appendChild(script);
+    }
+
+    function renderShows() {
+      const neighborhood = document.getElementById("neighborhoodFilter").value;
+      const query = document.getElementById("searchInput").value.toLowerCase().trim();
+      const todayStr = new Date().toISOString().split("T")[0];
+
+      const filtered = allShows.filter(show => {
+        if (neighborhood !== "all" && show.neighborhood !== neighborhood) return false;
+        if (query && !show.artist.toLowerCase().includes(query) && !show.venue.toLowerCase().includes(query)) return false;
+        if (selectedWhen === "tonight" && show.date !== todayStr) return false;
+        if (selectedWhen === "weekend") {
+          const [y, m, d] = show.date.split("-").map(Number);
+          const day = new Date(y, m - 1, d).getDay();
+          if (day !== 5 && day !== 6 && day !== 0) return false;
+        }
+        return true;
+      });
+
+      const container = document.getElementById("showList");
+      if (!filtered.length) {
+        container.innerHTML = `<div class="show-card"><p class="show-meta">No shows match those filters right now. Try switching back to <strong>All Dates</strong> or <strong>All Neighborhoods</strong>.</p></div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(show => `
+        <article class="show-card">
+          <div>
+            <div class="show-date">${formatDate(show.date)} &bull; ${show.time}</div>
+            <h2 class="show-artist">${show.artist}</h2>
+            <div class="show-meta">${show.venue} &mdash; ${show.neighborhood}</div>
+            <div class="badges">
+              <span class="badge">${show.age}</span>
+              <span class="badge">${show.price}</span>
+            </div>
+          </div>
+          <a class="ticket-btn" href="${show.ticketUrl}" target="_blank" rel="noopener noreferrer">Tickets / Info</a>
+        </article>
+      `).join("");
+    }
+
+    document.querySelectorAll(".pill").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".pill").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        selectedWhen = btn.dataset.when;
+        renderShows();
+      });
+    });
+
+    document.getElementById("neighborhoodFilter").addEventListener("change", renderShows);
+    document.getElementById("searchInput").addEventListener("input", renderShows);
+
+    fetch("./shows.json")
+      .then(res => res.json())
+      .then(data => {
+        allShows = data.sort((a, b) => a.date.localeCompare(b.date));
+        injectSeoSchema(allShows);
+        renderShows();
+      })
+      .catch(() => {
+        document.getElementById("showList").innerHTML = `<div class="show-card"><p>Unable to load show listings right now.</p></div>`;
+      });
+  </script>
+</body>
+</html>
