@@ -32,4 +32,5 @@ jobs:
           git config user.email "bot@brewcityshows.com"
           git add shows.json
           git diff --staged --quiet || git commit -m "Update Milwaukee venue show listings"
-          git push
+          git pull --rebase origin main
+          git push origin main
