@@ -1,30 +1,6 @@
 [
   {
-    "id": "xray-6a90ae522c0a386b30f7df3a",
-    "artist": "Geordie Kieffer/ Colin Bracewell",
-    "venue": "X-Ray Arcade",
-    "neighborhood": "Cudahy",
-    "date": "2026-11-20",
-    "time": "7:00 PM",
-    "age": "All Ages / Check Venue",
-    "price": "See Tickets",
-    "ticketUrl": "https://xrayarcade.com/calendar/2026/11/20/geordiekieffer",
-    "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793410710317-8MYHPYVJW5PWLZ2LZ3R9/20261120_GeordieKieffer_Square.jpg"
-  },
-  {
-    "id": "shank-2026-11-20-11",
-    "artist": "Lil\u2019 Ed & The Blues Imperials",
-    "venue": "Shank Hall",
-    "neighborhood": "East Side",
-    "date": "2026-11-20",
-    "time": "8:00 PM",
-    "age": "21+",
-    "price": "$20.00",
-    "ticketUrl": "https://www.ticketweb.com/event/lil-ed-and-the-blues-shank-hall-tickets/14273574",
-    "image": ""
-  },
-  {
-    "id": "shank-2026-11-21-19",
+    "id": "shank-2026-11-21-11",
     "artist": "Rave Jesus",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -60,7 +36,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793075837343-FT3MYGNKGHSH4GHBBA8T/20261122_StreetAngels_Square.jpg"
   },
   {
-    "id": "shank-2026-11-22-27",
+    "id": "shank-2026-11-22-19",
     "artist": "Deadelijk, Stallis Cowboys",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -84,7 +60,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793463601079-8JK9EH2ZA5Z0MIHMA640/20261123_TheMainliners_Square.jpg"
   },
   {
-    "id": "shank-2026-11-24-35",
+    "id": "shank-2026-11-24-27",
     "artist": "The Ike Reilly Assassination",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -96,7 +72,7 @@
     "image": ""
   },
   {
-    "id": "shank-2026-11-27-43",
+    "id": "shank-2026-11-27-35",
     "artist": "The R&B Cadets",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -120,7 +96,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793228460791-BKMVLFF4HU5J4SU65NVC/20261127_AllYourFriends_Square.jpg"
   },
   {
-    "id": "shank-2026-11-28-51",
+    "id": "shank-2026-11-28-43",
     "artist": "The R&B Cadets",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -144,7 +120,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1789536043646-L8KJ0ZSN996QI9J40AT2/20261128_ChasePetra_Square.jpg"
   },
   {
-    "id": "shank-2026-11-28-59",
+    "id": "shank-2026-11-28-51",
     "artist": "The Last Waltz: 50th Anniversary Tribute",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -192,7 +168,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1794200625319-I692NKWMT9WRSMC68CUJ/20261203_Lessons_Square.jpg"
   },
   {
-    "id": "shank-2026-12-03-67",
+    "id": "shank-2026-12-03-59",
     "artist": "The Steepwater Band",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -228,7 +204,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1790561188000-13M12S04ZOUQ2D67KZXM/20261204_Whores_Square.jpg"
   },
   {
-    "id": "shank-2026-12-04-75",
+    "id": "shank-2026-12-04-67",
     "artist": "Davina and the Vagabonds",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -264,7 +240,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1785451664995-328T3UERIHCLC2HUFHPM/20261205_TRSH_Square.jpg"
   },
   {
-    "id": "shank-2026-12-05-83",
+    "id": "shank-2026-12-05-75",
     "artist": "Anthony Gomes",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -336,7 +312,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793934567131-IUKDHLX6G4D2LLOZR4O1/20261210_ScottBiram_Square.jpg"
   },
   {
-    "id": "shank-2026-12-10-91",
+    "id": "shank-2026-12-10-83",
     "artist": "65 North Pickers",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -372,7 +348,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793409048180-543FT9TJTML75VX47XG9/20261211_RatTally_Square.jpg"
   },
   {
-    "id": "shank-2026-12-11-99",
+    "id": "shank-2026-12-11-91",
     "artist": "The Reverend Peyton\u2019s Big Damn Band, Adrian and Meredith",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -420,7 +396,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1792275946635-9KKROWMWBRED2IQJ0DHW/20261212_Endswell_Square.jpg"
   },
   {
-    "id": "shank-2026-12-12-107",
+    "id": "shank-2026-12-12-99",
     "artist": "Think Floyd USA",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -480,7 +456,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1791910711732-V28LMMORBEYSDGMSA753/20261216_HungerGames_Square.jpg"
   },
   {
-    "id": "shank-2026-12-16-114",
+    "id": "shank-2026-12-16-106",
     "artist": "Delvon Lamarr",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -504,7 +480,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1791517703359-JMA38OD6C0RON08DC1IX/20261217_BloodOrchid_Square.jpg"
   },
   {
-    "id": "shank-2026-12-17-122",
+    "id": "shank-2026-12-17-114",
     "artist": "On The Lash",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -552,7 +528,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793113433707-KC94DDORHV0C8Q8TUDYG/20261219_Edging_Square.jpg"
   },
   {
-    "id": "shank-2026-12-19-130",
+    "id": "shank-2026-12-19-122",
     "artist": "Southbound",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -588,7 +564,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1792108719718-TMLOCLL6PO0EAL30PIHX/20261221_BreeAlexandra_Square.jpg"
   },
   {
-    "id": "shank-2026-12-21-138",
+    "id": "shank-2026-12-21-130",
     "artist": "The Sleighriders",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -612,7 +588,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1795044749030-B83P5Q5FKM0655WGPS9J/20261226_1984_Square.jpg"
   },
   {
-    "id": "shank-2026-12-26-146",
+    "id": "shank-2026-12-26-138",
     "artist": "No Can Do \u2013 A Tribute To The Music of Hall & Oates",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -624,7 +600,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-01-09-153",
+    "id": "shank-2027-01-09-145",
     "artist": "DIO RULES: Tribute to Rainbow, Black Sabbath, and Dio",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -672,7 +648,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1786490251928-LWQOI3ML43EHMYYAVKFD/20270114_Missio_Square.jpg"
   },
   {
-    "id": "shank-2027-01-16-161",
+    "id": "shank-2027-01-16-153",
     "artist": "Nivrana: Tribute to Nirvana",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -720,7 +696,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1794797344075-QMHFREX2JI42MUOMZ2FH/20270123_SiDiosQuiere_Square.jpg"
   },
   {
-    "id": "shank-2027-01-23-169",
+    "id": "shank-2027-01-23-161",
     "artist": "Michael McDermott",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -732,7 +708,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-01-29-177",
+    "id": "shank-2027-01-29-169",
     "artist": "Hypnotized: The Music of Fleetwood Mac",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -756,7 +732,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1792610678999-UDC8AIIUK0TG0PTDYM9J/20270205_ScarletDemore_Square.jpg"
   },
   {
-    "id": "shank-2027-02-05-185",
+    "id": "shank-2027-02-05-177",
     "artist": "Miles Nielsen & The Rusted Hearts, Louie and the Flashbombs",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -780,7 +756,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1794798940935-PZ4WZNNELBSMNWCM5G9O/20270207_Siniu_Square.jpg"
   },
   {
-    "id": "shank-2027-02-11-193",
+    "id": "shank-2027-02-11-185",
     "artist": "C.J. Chenier & The Red Hot Louisiana Band",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -792,7 +768,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-02-15-201",
+    "id": "shank-2027-02-15-193",
     "artist": "That 1 Guy",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -816,7 +792,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793462376955-L4PMXXPDTNHUXQKZW4TL/20270219_Shaheri_Square.jpg"
   },
   {
-    "id": "shank-2027-02-19-209",
+    "id": "shank-2027-02-19-201",
     "artist": "Tommy Castro & The Painkillers",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -840,7 +816,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1790887020514-VKFP0H73A4UC81JVHZFC/BurnBright_2027_Weekend_SQ.jpg"
   },
   {
-    "id": "shank-2027-02-24-217",
+    "id": "shank-2027-02-24-209",
     "artist": "The Queers, Toxic Energy",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -900,7 +876,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1792709021411-SP7GYHKOH2GE2Y9IHXEW/20270301_Ventana_Square.jpg"
   },
   {
-    "id": "shank-2027-03-02-225",
+    "id": "shank-2027-03-02-217",
     "artist": "Albert Lee",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -912,7 +888,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-03-05-233",
+    "id": "shank-2027-03-05-225",
     "artist": "Josh Rouse",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -924,7 +900,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-03-06-241",
+    "id": "shank-2027-03-06-233",
     "artist": "Seaside Zoo (Grateful Dead Tribute)",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -948,7 +924,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1794272820854-Y3G29NPSQ6MHPSU8X48H/20270307_Capstan_Square.jpg"
   },
   {
-    "id": "shank-2027-03-12-249",
+    "id": "shank-2027-03-12-241",
     "artist": "U2Zoo",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -972,7 +948,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1790567339111-8K0HC5OKZSYOIR4MKOOM/20270313_SisterWifeSexStrike_Square.jpg"
   },
   {
-    "id": "shank-2027-03-13-257",
+    "id": "shank-2027-03-13-249",
     "artist": "Jagged Little Pill: The Alanis Tribute, Lilith Affair: The Lilith Music Experience",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -984,7 +960,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-03-14-265",
+    "id": "shank-2027-03-14-257",
     "artist": "Jeremiah Harmon",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1008,7 +984,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1792967614511-P28NU7OV2XZX8V22DQJL/20270316_CallItOff_Square.jpg"
   },
   {
-    "id": "shank-2027-03-17-273",
+    "id": "shank-2027-03-17-265",
     "artist": "Trever M. Keith & Lilly Hiatt",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1020,7 +996,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-03-18-281",
+    "id": "shank-2027-03-18-273",
     "artist": "Stanley Jordan",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1032,7 +1008,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-03-20-289",
+    "id": "shank-2027-03-20-281",
     "artist": "Fluffy (Ween Tribute Band)",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1056,7 +1032,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1794928768872-D44JM2W9YUFPSXXIS0RS/20270321_CoryBranan_Square.jpg"
   },
   {
-    "id": "shank-2027-03-21-297",
+    "id": "shank-2027-03-21-289",
     "artist": "The Lemonheads",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1104,7 +1080,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1792417392503-I6BNLVTUARBULVQFI0FG/20260327_TheDollyrots_Square.jpg"
   },
   {
-    "id": "shank-2027-04-06-305",
+    "id": "shank-2027-04-06-297",
     "artist": "Rasputina, Buffalo Nichols",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1116,7 +1092,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-04-08-313",
+    "id": "shank-2027-04-08-305",
     "artist": "Richard Shindell",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1128,7 +1104,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-04-09-321",
+    "id": "shank-2027-04-09-313",
     "artist": "Cash Box Kings",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1140,7 +1116,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-04-10-329",
+    "id": "shank-2027-04-10-321",
     "artist": "Planet Purple",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1152,7 +1128,7 @@
     "image": ""
   },
   {
-    "id": "shank-2027-04-11-337",
+    "id": "shank-2027-04-11-329",
     "artist": "Casey James",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
@@ -1212,7 +1188,7 @@
     "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1794279517074-889VRBM2V169RR4FO3WB/20270626_EarthTongue_Square.jpg"
   },
   {
-    "id": "shank-2027-09-05-345",
+    "id": "shank-2027-09-05-337",
     "artist": "The Tannahill Weavers",
     "venue": "Shank Hall",
     "neighborhood": "East Side",
