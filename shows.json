@@ -1,17 +1,5 @@
 [
   {
-    "id": "xray-6ab00b3e157ef7269b6fbb35",
-    "artist": "The Mainliners / The Nu-Viles / Jinksie",
-    "venue": "X-Ray Arcade",
-    "neighborhood": "Cudahy",
-    "date": "2026-11-23",
-    "time": "6:00 PM",
-    "age": "All Ages / Check Venue",
-    "price": "See Tickets",
-    "ticketUrl": "https://xrayarcade.com/calendar/2026/11/23/themainliners",
-    "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1793463601079-8JK9EH2ZA5Z0MIHMA640/20261123_TheMainliners_Square.jpg"
-  },
-  {
     "id": "shank-2026-11-24-11",
     "artist": "The Ike Reilly Assassination",
     "venue": "Shank Hall",
@@ -550,6 +538,18 @@
     "price": "See Tickets",
     "ticketUrl": "https://www.ticketweb.com/event/no-can-do-a-tribute-shank-hall-tickets/14243844",
     "image": ""
+  },
+  {
+    "id": "xray-6b03a3ba63805f1160ff0bd0",
+    "artist": "Conniption / Thrash Ketchum",
+    "venue": "X-Ray Arcade",
+    "neighborhood": "Cudahy",
+    "date": "2026-12-27",
+    "time": "2:00 PM",
+    "age": "All Ages / Check Venue",
+    "price": "See Tickets",
+    "ticketUrl": "https://xrayarcade.com/calendar/2026/12/27/conniption",
+    "image": "https://images.squarespace-cdn.com/content/v1/5c462fd0c3c16a9eac57b7ca/1795400815969-54N9VOI5GW0TPEKED4T8/20261227_Conniption_Square.jpg"
   },
   {
     "id": "shank-2027-01-09-129",
